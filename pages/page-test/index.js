@@ -1,26 +1,27 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable no-shadow */
-/* eslint-disable no-undef */
 /* eslint-disable react/no-danger */
 /* eslint-disable no-else-return */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import lazyLoader from 'components/LazyLoader';
-import { PageBody, PageLayout } from 'components/Layout/PageStructure';
+import { PageContent } from './styles';
+import { Container } from 'components/Layout/Grid/styles';
 
 const NavBar = lazyLoader(() => import('components/Layout/Navbar'));
 const Footer = lazyLoader(() => import('components/Layout/Footer'));
 const LandingPage = lazyLoader(() => import('components/LandingPage'));
 
-function PageContainer(props) {
+function PageContainer() {
   return (
-    <PageBody>
+      <>
       <NavBar/>
-      <PageLayout>
-        <LandingPage/>
-      </PageLayout>
+        <Container>
+          <PageContent>
+              Pagina de prueba
+          </PageContent>
+        </Container>
       <Footer/>
-    </PageBody>
+      </>
   );
 }
 export default PageContainer;
+
