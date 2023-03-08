@@ -10,7 +10,7 @@ app.prepare().then(() => {
   createServer((req, res) => {
     const parsedUrl = parse(req.url, true);
     handle(req, res, parsedUrl);
-  }).listen(3005, (err) => {
+  }).listen(3000, (err) => {
     if (err) throw err;
   });
 });
