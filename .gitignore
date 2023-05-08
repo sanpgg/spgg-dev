@@ -1,32 +1,32 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+/spgg-front/node_modules
+/spgg-front/.pnp
+/spgg-front/.pnp.js
 
 # testing
-/coverage
+/spgg-front/coverage
 
 # next.js
-/.next/
-/out/
+/spgg-front/.next/
+/spgg-front/out/
 
 # production
-/build
+/spgg-front/build
 
 # misc
 .DS_Store
-*.pem
+/spgg-front/*.pem
 
 # debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+/spgg-front/npm-debug.log*
+/spgg-front/yarn-debug.log*
+/spgg-front/yarn-error.log*
+/spgg-front/.pnpm-debug.log*
 
 # local env files
-.env*.local
+/spgg-front/.env*.local
 
 # vercel
-.vercel
+/spgg-front/.vercel
