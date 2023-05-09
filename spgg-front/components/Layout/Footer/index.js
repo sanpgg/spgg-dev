@@ -17,15 +17,4 @@ function Footer() {
   );
 }
 
-Footer.propTypes = {
-  /**
-   * Footer content
-   */
-  footer: PropTypes.arrayOf(PropTypes.object)
-};
-
-Footer.defaultProps = {
-  footer: {}
-};
-
 export default Footer;
