@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*Layout*/
+.wrapper{
+	display: block;
+    min-height: 100vh;
+    width: 100%;
+    flex: 1;
+    height: 100%;
+}
+
+/*Card*/
+.card-perfil{
+    margin: 20px 0;
+    padding: 0 20px;
+}
+.card-perfil .nombre{
+    font-weight: bold;
+    font-size: 15px;
+}
+.card-perfil .rol{
+    font-weight: normal;
+    font-size: 14px;
+    color: #A0A0A0;
+}
+.perfil{
+    padding: 11px 13px 0px;
+    line-height: 19px;
+}
+.content-perfil img{
+    width: 55px;
+
+}
+/*Menu*/
+.nav-menu-sidebar{
+    padding: 0;
+    margin: 0;
+}
+.nav-menu-sidebar li{
+    width: 100%;
+    list-style: none;
+}
+.nav-menu-sidebar li a{
+    display: block;
+    text-transform: uppercase;
+    padding: 20px;
+    font-size: 15px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #D7D7D7;
+}
+.nav-menu-sidebar li a:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+
+/*Form stling*/
+h4, h3, h2, h1, h6{
+    font-weight: bold;
+}
+form label.form-label{
+    font-weight: bold;
+}
+.form-control, .form-select{
+    width: 100%;
+}
+.form-label{
+    padding-bottom: 10px;
+    display: inline-block;
+}
+form input.form-control, select.form-select{
+    padding-left: 29px;
+    padding-right: 29px;
+    border-radius: 40px;
+    font-size: 13px;
+    background-color: #F1F1F1;
+    height: 49px;
+    border-color: #CBCBCB;
+}
+
+input:disabled {
+    border: 1px solid #ccc;
+    opacity: 0.5 !important;
+    cursor: not-allowed; 
+}
+
+textarea.form-control{
+    font-size: 13px;
+    border-radius: 12px;
+    background-color: #F1F1F1;
+    border-color: #CBCBCB;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #afafaf !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #afafaf !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #afafaf !important;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+
+
+/*Left Open Draw*/
+.right-0 {
+    right: 0;
+}
+.top-0 {
+    top: 0;
+}
+.filter-date{
+    position: relative;
+    text-decoration: none;
+    font-size: 13px;
+    color: #444444;
+    width: 100%;
+    border: 1px solid #eee;
+    display: block;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+.filter-date:hover{
+    color: #444444;
+    border: 1px solid #000;
+}
+.filter-date span{
+    position: relative;
+    display: block;
+    font-size: 15px;
+    color: #000;
+}
+.filter-date i{
+    position: absolute;
+    font-size: 17px;
+    right: 14px;
+    top: 25px;
+}
+
+.periodo{
+    padding: 0;
+    border: 1px solid #eee;
+    list-style: none;
+}
+.periodo li{
+    cursor: pointer;
+    padding: 12px 15px;
+    font-size: 15px;
+    color: #444;
+}
+.periodo li:hover{
+    background-color: #F5F5F5;
+}
+.periodo li.active{
+    background-color: #eaeaea;
+}
+#collapse-periodo a{
+    padding: 12px 15px;
+    display: block;
+    text-decoration: none;
+    border: none;
+    color: #444;
+}
+
+#collapse-periodo a[aria-expanded="true"]{
+    border: none;
+}
+#custom-date{
+    width: 90%;
+    padding: 10px 15px;
+    margin: 0 auto 20px;
+}
+
+.btn-aply-filter{
+    margin-bottom: 20px;
+    padding: 7px;
+    border: none;
+    color: #fff;
+    border-radius: 40px;
+    width: 100%;
+    background-color: #000;
+}
+.btn-delete-filter{
+    padding: 7px;
+    border-color: 1px sold #000;
+    color: #000 !important;
+    border-radius: 40px;
+    background-color: #fff;
+    width: 100%;
+}
+
+/*Form styling*/
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  font-size: 14px;
+  background: #000000;
+  padding: 8px 20px;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #CCCCCC;
+}
+
+
+
+

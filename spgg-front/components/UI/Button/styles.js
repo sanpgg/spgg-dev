@@ -4,11 +4,9 @@ import styled from 'styled-components';
 
 export const ButtonStyled = styled.button`
   color: ${palette.white};
-  ${textStyles.P16A}
-  height: 50px;
-  padding: 0 36px;
-  border: 1px solid ${palette.black};
-  border-radius: 100px;
+  ${textStyles.bodyMedium}
+  padding: 11px 20px;
+  border: 1px solid ${palette.dark};
   cursor: pointer;
 
   /* Style sub-classes */
@@ -17,42 +15,93 @@ export const ButtonStyled = styled.button`
     margin-right: 20px;
   }
   &.primary {
-    background-color: ${palette.black};
+    background-color: ${palette.dark};
     color: ${palette.white}; 
     &:hover{
-      background-color: ${palette.darkGray}
+      background-color: ${palette.gray}
     }
     &.disabled, &:disabled{
-      color: ${palette.lightGray};
+      color: ${palette.white};
       background-color: ${palette.bordes};
       border-color: ${palette.bordes};
       &:hover{
-        color: ${palette.lightGray};
+        color: ${palette.white};
         background-color: ${palette.bordes};
         border-color: ${palette.bordes};
       }
     }
-    &.icon {
-      
-      div{
-        font-size: 24px;
-        background-color: transparent;
-        border: 0;
-        font-size: 24px;
-        &:hover{
-          background-color: transparent;
-          border: 0;
-        }
+    div{
+      i{
+        color: ${palette.white}
       }
     }
   }
 
   &.secondary {
-    color: ${palette.darkGray};
+    color: ${palette.lightGray};
     background-color: ${palette.white};
-    border-color: ${palette.darkGray};
+    border-color: ${palette.light};
     &:hover{
-      background-color: ${palette.darkGray};
+      background-color: ${palette.light};
+      color: ${palette.gray};
+      &.icon{
+        div{
+        background-color: transparent;
+        border: 0;
+        color: ${palette.white};
+        &:hover{
+          background-color: transparent;
+          border: 0;
+        }
+      }
+      }
+    }
+    &.disabled, &:disabled{
+      color: ${palette.bordes};
+      background-color: ${palette.white};
+      border-color: ${palette.light};
+      &:hover{
+        color: ${palette.bordes};
+        background-color: ${palette.white};
+        border-color: ${palette.light};
+      }
+    }
+  }
+
+  &.link {
+    color: ${palette.gray};
+    background-color: ${palette.white};
+    border-color: ${palette.white};
+    &:hover{
+      text-decoration: underline;
+    }
+    &.disabled, &:disabled{
+      color: ${palette.lightGray};
+      background-color: ${palette.white};
+      border-color: ${palette.bordes};
+      &:hover{
+        color: ${palette.lightGray};
+        background-color: ${palette.white};
+        border-color: ${palette.bordes};
+        text-decoration: underline;
+      }
+    }
+    &.loading{
+      border-color: ${palette.light};
+      div{
+        i{
+          color: ${palette.gray}
+        }
+      }
+    }
+  }
+
+  &.danger {
+    color: ${palette.red};
+    background-color: ${palette.lightRed};
+    border-color: ${palette.red};
+    &:hover{
+      background-color: ${palette.red};
       color: ${palette.white};
       &.icon{
         div{
@@ -67,8 +116,8 @@ export const ButtonStyled = styled.button`
       }
     }
     &.disabled, &:disabled{
-      color: ${palette.lightGray};
-      background-color: ${palette.white};
+      color: ${palette.white};
+      background-color: ${palette.red};
       border-color: ${palette.bordes};
       &:hover{
         color: ${palette.lightGray};
@@ -76,109 +125,39 @@ export const ButtonStyled = styled.button`
         border-color: ${palette.bordes};
       }
     }
-    &.icon {
+    &.loading{
+      border-color: ${palette.red};
+      background-color: ${palette.red};
       div{
-        background-color: transparent;
-        border: 0;
-        color: ${palette.darkGray};
-        &:hover{
-          background-color: transparent;
-          border: 0;
+        i{
+          color: ${palette.white}
         }
       }
     }
+    
   }
-  &.gray{
-    color: ${palette.darkGray};
-    background-color: ${palette.bordes};
-    border-color: ${palette.bordes};
-    &:hover{
-      color: ${palette.darkGray};
-      background-color: ${palette.white};
-      border-color: ${palette.bordes};
-    }
-  }
-
-  .grouped{
-    div{
-      background-color: transparent !important;
-      &:hover{
-        border: 0 !important;
-      }
-    }
-  }
-
-  &.medium {
-    padding: 0 26px !important;
-    height: 50px;
-  }
-
-  &.link{
-    border: 0;
-    border-radius: 0;
-    border-bottom: 1px solid ${palette.white};
-    color: ${palette.darkGray};
-    padding: 0 !important;
-    &:hover{
-      border-bottom: 1px solid ${palette.darkGray};
-    }
-    div {
-      background-color: transparent;
-      color: ${palette.darkGray} !important;
-    }
-  }
-
-  &.icon {
-    display:flex;
+  &.loading{
+    width: 83px;
+    height: 44px;
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    div{
-      margin: 0 0 0 10px;
-      padding: 0;
-      border: 0;
-      border-radius: 0;
+    padding: 0;
+  }
+  &.profile-btn {
+    background-color: ${palette.white};
+    color: ${palette.dark}; 
+    border: 1px solid ${palette.bordes};
+    &:hover{
+      background-color: ${palette.dark}
       color: ${palette.white};
+      border: 1px solid ${palette.dark};
     }
-  }
-  @media only screen and (max-width: 767px) {
-    height: 40px;
-    padding: 0 26px;
-    ${textStyles.P15A}
-  }
-`;
 
-export const GroupedContainer = styled.div`
-  display: flex;
-  .grouped{
-    &:first-child{
-      margin-right: 20px;
-      color: ${palette.darkGray};
-      background-color: ${palette.white};
-      border-color: ${palette.darkGray};
-      div{
-        background-color: transparent !important;
-        color: ${palette.darkGray};
-      }
-      &:hover{
-        background-color: ${palette.darkGray};
-        color: ${palette.white};
-        div{
-          color: white;
-          border: 0;
-        }
-      }
-    }
-    &:last-child{
-      background-color: ${palette.black};
-      color: ${palette.white}; 
-      div{
-        background-color: transparent !important;
-        color: ${palette.white};
-      }
-      &:hover{
-        background-color: ${palette.darkGray};
-        div{
-          border: 0;
-        }
+    div{
+      i{
+        color: ${palette.white}
       }
     }
   }

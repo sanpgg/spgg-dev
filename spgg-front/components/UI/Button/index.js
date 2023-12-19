@@ -1,23 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
 
 import { ButtonStyled } from './styles';
+import Loading from 'components/UI/Loading';
 
 function Button({
-  icon, className, label, size, onClick
+  loading, className, label, onClick
 }) {
   return (
     <ButtonStyled
-      className={`${className} ${size} ${icon ? 'icon' : ''}`}
-      onClick={onClick}
+      className={`${className} ${loading ? 'Cargando' : ''}`}
+      onClick={() => onClick()}
     >
-      {label && (
-        label
-      )}
-      {icon && (
-        <Icon size="medium" icon={icon} />
-      )}
+      {loading
+        ? (
+          <Loading />
+        )
+        : label && (
+          label
+        )}
     </ButtonStyled>
   );
 }
@@ -26,30 +27,25 @@ Button.propTypes = {
   /**
      * Wich Style the button is going to be?
      */
-  className: PropTypes.oneOf(['primary', 'secondary', 'grouped']),
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(['default', 'medium']),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string,
+  className: PropTypes.oneOf(['primary', 'secondary', 'link', 'danger']),
   /**
    * Optional click handler
    */
   onClick: PropTypes.func,
   /**
-   * Optional icon
+   * Optional Loading
    */
-  icon: PropTypes.string
+  loading: PropTypes.bool,
+  /**
+   * Optional Loading
+   */
+  label: PropTypes.string
 };
 
 Button.defaultProps = {
   className: 'primary',
-  size: 'default',
   label: 'Button',
-  onClick: undefined
+  loading: false
 };
 
 export default Button;

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-export const LoadingStyled = styled.img`
-  width: 40px;
+export const LoadingStyled = styled.div`
   /* Style sub-classes */
 
-  animation: turn 0.7s infinite linear;
+  div{
+    animation: turn 0.7s infinite linear;
+  }
   /* &.large {
     font-size: 1.2em;
     padding: 10px 16px;

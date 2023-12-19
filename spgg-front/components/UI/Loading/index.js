@@ -3,7 +3,7 @@ import {
   LoadingStyled
 } from './styles';
 import PropTypes from 'prop-types';
-import loading from '../../../assets/loading.svg';
+import Icon from '../Icon';
 
 function Loading(
   {
@@ -11,10 +11,9 @@ function Loading(
   }
 ) {
   return (
-    <LoadingStyled
-      className={`${size}`}
-      src={loading}
-    />
+    <LoadingStyled className={`${size}`}>
+      <Icon className="transparent" size="medium" icon="bx bx-loader-alt"></Icon>
+    </LoadingStyled>
   );
 }
 

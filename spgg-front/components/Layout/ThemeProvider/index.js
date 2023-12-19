@@ -1,13 +1,10 @@
-/* eslint-disable max-len */
-/* eslint-disable array-callback-return */
-/* eslint-disable no-else-return */
-/* eslint-disable no-plusplus */
 /* eslint-disable react/prop-types */
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
-import { downloadFile } from 'utils/ApiFunctions';
-import constants from 'utils/constants';
+import { BaseModalBackground } from 'styled-react-modal';
 
-export const breakpoints = {
+export const SpggTheme = {
   breakpoints: {
     mobileSmall: 320,
     mobileLarge: 480,
@@ -23,28 +20,39 @@ export const palette = {
   transparent: 'transparent',
   // Solids
   black: '#000000',
+  gray: '#F1F1F2',
   darkGray: '#333333',
-  bordes: '#EEEEEE',
+  bordes: '#D4D4D4',
   white: '#FFFFFF',
-  lightGray: '#999999',
-  red: '#EB2A2A',
-  green: '#56B766',
-  dark: '#212121'
+  lightGray: '#9E9E9E',
+  red: '#F5000A',
+  lightRed: 'rgba(245, 0, 10, 0.05)',
+  green: '#2C5D35',
+  dark: '#212121',
+  placeholder: '#C4C4C4',
+  light: '#F5F5F5',
+  blue: '#3B70D5'
 };
 
-export const navigateTo = (url) => {
-  if (url) {
-    if (url.includes('https') || url.includes('www')) {
-      window.open(url, '_blank').focus();
-    } else {
-      window.location.assign(url);
-    }
-  }
-};
-
-export const SectionContainer = styled.div`
-  ${(props) => (props.marginTop ? ` padding-top: ${props.marginTop} !important;` : 'padding-top: 40px !important;')};
-  ${(props) => (props.marginBottom ? ` padding-bottom: ${props.marginBottom} !important;` : 'padding-bottom: 40px !important;')};
-  ${(props) => (props.borderTop ? `border-top: 1px solid ${palette.bordes};` : '')};
-  ${(props) => (props.borderBottom ? `border-bottom: 1px solid ${palette.bordes};` : '')};
+export const FadingBackground = styled(BaseModalBackground)`
+  opacity: ${(props) => props.opacity};
+  transition: all 0.3s ease-in-out;
 `;
+
+export const notify = (alert, type) => {
+  toast(alert, {
+    position: 'top-right',
+    autoClose: 4000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    type,
+    progress: undefined
+  });
+};
+
+export const emptyCollection = {
+  name: '',
+  items: []
+};

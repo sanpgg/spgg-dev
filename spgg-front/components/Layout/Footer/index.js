@@ -1,20 +1,26 @@
-/* eslint-disable no-undef */
 import PropTypes from 'prop-types';
 import React from 'react';
-import Script from 'next/script';
 import {
-  FooterContainer,
+  FooterContainer
 } from './styles';
-import { Container } from '../Grid/styles';
 
-function Footer() {
+function Footer({
+  links, contacts, copyrightLinks, socialMedia, footerImage
+}) {
   return (
-    <Container>
-      <FooterContainer>
-          Footer Content
-      </FooterContainer>
-    </Container>
+    <FooterContainer className="border-t border-gray-200 text-center p-4">
+      <span>Copyright © 2023  | Innovación</span>
+    </FooterContainer>
   );
-}
+ }
+
+Footer.propTypes = {
+  /**
+   * links content
+   */
+};
+
+Footer.defaultProps = {
+};
 
 export default Footer;

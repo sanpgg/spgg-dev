@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   InputContainer,
   InputInner,
   InputLabel,
   InputStyled,
-  InputAlert
+  InputAlert,
+  RecoverLabel
 } from './styles';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
@@ -21,33 +22,44 @@ function Input(
     type,
     password,
     disabled,
-    readOnly,
-    size
+    readOnly
   }
 ) {
   const [currentType, setCurrentType] = useState(type);
+  const [currentValue, setCurrentValue] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  useEffect(() => {
+    if (value) {
+      setCurrentValue(value);
+    } else {
+      setCurrentValue('');
+    }
+    setIsDisabled(disabled || false);
+  }, [value, disabled]);
+
   return (
     <InputContainer className={`${alertText ? alert : ''}`}>
       <InputInner>
         <InputStyled
           placeholder={placeHolder}
           type={currentType}
-          value={value}
+          value={currentValue}
           onChange={(e) => {
-            if (!readOnly) {
-              onChange(e.target.value);
-            }
+            onChange(e.target.value);
+            setCurrentValue(e.target.value);
           }}
           onClick={onClick}
-          disabled={disabled}
+          disabled={isDisabled}
           readOnly={readOnly}
-          className={size}
         />
-        {label && (
-          <InputLabel className="label">
-              {label}
-          </InputLabel>
-        )}
+        <div className="flex justify-between">
+          {label && (
+            <InputLabel className="label">
+                {label}
+            </InputLabel>
+          )}
+        </div>
         {password && (
           currentType === 'password'
             ? <Icon className="password-icon transparent" icon="bx bx-show-alt" onClick={() => setCurrentType('text')} />
@@ -95,7 +107,7 @@ Input.propTypes = {
   /**
    * Input type
    */
-  type: PropTypes.oneOf(['text', 'password']),
+  type: PropTypes.oneOf(['text', 'password', 'email']),
   /**
    * Password type
    */
@@ -109,9 +121,9 @@ Input.propTypes = {
    */
   readOnly: PropTypes.bool,
   /**
-   * Size
+   * Recover prop
    */
-  size: PropTypes.oneOf(['large', 'medium'])
+  recover: PropTypes.bool
 };
 
 Input.defaultProps = {

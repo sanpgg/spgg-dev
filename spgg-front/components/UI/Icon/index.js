@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { IconContainer } from './styles';
 
 function Icon({
-  className, size, icon, hover, onClick
+  className, icon, onClick, active
 }) {
   return (
     <>
       <IconContainer
-        className={`${className} ${size} ${hover}`}
-        onClick={() => { onClick(); }}
+        className={`${className}${active ? 'active' : ''}`}
+        onClick={onClick}
       >
         <i className={`${icon}`} />
       </IconContainer>
@@ -22,15 +22,7 @@ Icon.propTypes = {
   /**
      * Wich style the Icon is going to be?
      */
-  className: PropTypes.oneOf(['black', 'white', 'transparent', 'gray']),
-  /**
-     * Wich style the Icon is going to be?
-     */
-  hover: PropTypes.oneOf(['hoverBlack', 'hoverWhite', 'hoverGray', 'noHover']),
-  /**
-   * How large should the Icon be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  className: PropTypes.string,
   /**
    * Optional click handler
    */
@@ -38,15 +30,18 @@ Icon.propTypes = {
   /**
    * Wich style the Icon is going to be?
    */
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  /**
+   * Wich status has the button
+   */
+  active: PropTypes.bool
 };
 
 Icon.defaultProps = {
-  className: 'black',
-  hover: 'noHover',
-  size: 'large',
+  className: 'transparent',
   icon: 'bx bx-search',
-  onClick: undefined
+  onClick: undefined,
+  active: false
 };
 
 export default Icon;

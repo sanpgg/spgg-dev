@@ -1,25 +1,28 @@
 import defaultImage from 'assets/defaultImage.svg';
+import facebookLogo from 'assets/facebookLogo.svg';
+import twitterLogo from 'assets/twitterLogo.svg';
+import instagramLogo from 'assets/instagramLogo.svg';
 
 export const links_example = [
   {
     id: 1,
     label: 'Elemento 1',
-    href: '/'
+    url: '/'
   },
   {
     id: 2,
     label: 'Elemento 2',
-    href: '/'
+    url: '/'
   },
   {
     id: 3,
     label: 'Elemento 3',
-    href: '/'
+    url: '/'
   },
   {
     id: 4,
     label: 'Elemento 4',
-    href: '/'
+    url: '/'
   }
 ];
 
@@ -27,22 +30,22 @@ export const copyRight_example = [
   {
     id: 1,
     label: 'Link 1',
-    href: '/'
+    url: '/'
   },
   {
     id: 2,
     label: 'Link 2',
-    href: '/'
+    url: '/'
   },
   {
     id: 3,
     label: 'Link 3',
-    href: '/'
+    url: '/'
   },
   {
     id: 4,
     label: 'Link 4',
-    href: '/'
+    url: '/'
   }
 ];
 
@@ -50,19 +53,19 @@ export const contact_example = [
   {
     id: 1,
     label: 'Phone Number',
-    href: '/',
+    url: '/',
     linkText: '(00) 0000 0000'
   },
   {
     id: 2,
     label: 'Phone Number',
-    href: '/',
+    url: '/',
     linkText: '(00) 0000 0000'
   },
   {
     id: 3,
     label: 'Phone Number',
-    href: '/',
+    url: '/',
     linkText: '(00) 0000 0000'
   }
 ];
@@ -74,22 +77,17 @@ export const footerImage_example = {
 export const socialMedia_example = [
   {
     id: 1,
-    href: 'www.facebook.com',
-    image: 'bx bxl-facebook-circle'
+    url: 'www.facebook.com',
+    image: facebookLogo
   },
   {
     id: 2,
-    href: 'www.twitter.com',
-    image: 'bx bxl-twitter'
+    url: 'www.twitter.com',
+    image: twitterLogo
   },
   {
     id: 3,
-    href: 'www.instagram.com',
-    image: 'bx bxl-instagram'
-  },
-  {
-    id: 4,
-    href: 'www.youtube.com',
-    image: 'bx bxl-youtube'
+    url: 'www.instagram.com',
+    image: instagramLogo
   }
 ];

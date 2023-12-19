@@ -6,102 +6,111 @@ export const InputContainer = styled.div`
   /* Style sub-classes */
   display: flex;
   flex-direction: column;
-
-  &.medium{
-    background-color: blue !important;
-    input{
-      height: 50px;
-    }
+  margin-bottom: 20px;
+  position: relative;
+  .password-icon{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    cursor: pointer;
   }
-
-
-  //input states
 
 &:hover{
   input{
     border-color: ${palette.lightGray};
   }
-}
 
-&.success{
-  input{
-    border-color: ${palette.green}
+  input.disabled, input:disabled{
+    border-color: ${palette.bordes};
   }
 }
 
 &.error{
   input{
     border-color: ${palette.red};
+    background-color: ${palette.lightRed};
+    &:hover{
+      background-color: ${palette.lightRed};
+    }
   }
+}
+
+input:focus + label, input:active + label{
+    color: ${palette.dark};
+    border-color: ${palette.bordes};
+}
+
+input:disabled + label, input.disabled + label{
+    color: ${palette.lightGray};
+    border-color: ${palette.bordes};
+    &:hover{
+      color: ${palette.lightGray};
+      border-color: ${palette.bordes};
+    }
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px ${palette.white} inset !important;
 }
 
 `;
 
+export const InputInner = styled.div`
+display: flex;
+flex-direction: column-reverse;
+`;
+
 export const InputLabel = styled.label`
-  ${textStyles.L13}
+  ${textStyles.label}
   color: ${palette.lightGray};
-  line-height: 24px;
-  margin: 0 0 5px;
+  margin: 0 0 10px;
+`;
 
-  &.success {
-      color: ${palette.green};
-  }
-
-  &.error {
-    
-    color: ${palette.red};
-  }
-  /* Style sub-classes */
-  
-  /*
-  &.large {
-    font-size: 1.2em;
-    padding: 10px 16px;
-    border-radius: 6px;
-  }
-
-  &.medium {
-    font-size: 1.2em;
-    padding: 10px 16px;
-    border-radius: 6px;
-  }
-
-  &.small {
-    font-size: 1.2em;
-    padding: 10px 16px;
-    border-radius: 6px;
-  }
-  */
+export const RecoverLabel = styled.a`
+  ${textStyles.label}
+  color: ${palette.lightGray};
+  margin: 0 0 10px;
 `;
 
 export const InputStyled = styled.input`
-  padding: 0 20px;
-  height: 60px;
+  padding: 0 15px;
+  height: 40px;
+  border-radius: 5px;
   border: 1px solid ${palette.bordes};
-  ${textStyles.P16A}
+  background-color: ${palette.gray};
+  ${textStyles.body}
   color: ${palette.black};
 
-  /* Style sub-classes */
-
-  &.medium{
-    height: 50px;
+  &::placeholder{
+      opacity: 1;
+      color: ${palette.placeholder};
   }
-  
   &:hover {
     border-color: ${palette.lightGray};
   }
 
-  &:focus{
-    outline: none;
-    border-radius: 0;
-    border-color: ${palette.black};
+  &:focus {
+  
+    border-color: ${palette.red};
+  }
 
+  &:focus {
+    outline: none;
+    border-color: ${palette.dark};
+  }
 
   &:disabled, &.disabled {
-    
-    background-color: ${palette.bordes};
+    background-color: ${palette.light};
     border-color: ${palette.bordes};
     color: ${palette.lightGray};
+    &:hover{
+      border-color: ${palette.bordes};
+    }
   }
 
   &.success {
@@ -109,26 +118,15 @@ export const InputStyled = styled.input`
   }
 
   &.error {
-    
     color: ${palette.red};
   }
-`;
-
-export const InputInner = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-
-  input:focus + label, input:active + label{
-    color: ${palette.black};
-  }
-
 `;
 
 export const InputAlert = styled.p`
   /* Style sub-classes */
   margin: 10px 0 0;
   line-height: 16px;
-  ${textStyles.L13}
+  ${textStyles.labelMedium}
 
   &.success {
    
