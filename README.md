@@ -13,9 +13,9 @@ Tecnologías utilizadas:
 Laravel 8, Composer >= 2.2.6
 
 Para ejecutar el proyecto:
-1.composer install 
-2.php artisan migrate 
-3.php artisan db:seed 
-4.php artisan passport:install
-5.php artisan serve (iniciar en local)
+1. composer install
+2. php artisan migrate
+3. php artisan db:seed
+4. php artisan passport:install
+5. php artisan serve (iniciar en local)
 
